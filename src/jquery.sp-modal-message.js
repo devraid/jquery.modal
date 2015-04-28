@@ -140,6 +140,6 @@
         $('.sp-modal-text', target).css('text-align', this._textAlign);
         
         // calls the parent _update
-        $.spModalUi.prototype._update.call(this);
+        $.spModalDialog.prototype._update.call(this);
     };
 })(jQuery);
