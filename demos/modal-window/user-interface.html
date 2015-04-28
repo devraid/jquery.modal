@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Modal Window Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../external/jquery-ui-1.11.4.min.css" />
+    <link rel="stylesheet" href="../../src/jquery.sp-modal-ui.css" />
+    <link rel="stylesheet" href="css/user-interface.css" />
+    <script src="../../external/jquery-2.1.3.min.js"></script>
+    <script src="../../external/jquery-ui-1.11.4.min.js"></script>
+    <script src="../../src/jquery.sp-modal-ui.js"></script>
+    <script>
+        $(function () {
+            var target = $('.user-interface');
+            var ui = new $.spModalUi(target);
+            
+            // populates data
+            $('.title', target).text(ui.getParam('title'));
+            $('.message', target).html(ui.getParam('message'));
+            
+            // actions
+            $('#action-1').click(function () {
+                ui.trigger('action-1');
+            });
+            
+            $('#action-2').click(function () {
+                ui.trigger('action-2');
+            });
+            
+            $('#action-3').click(function () {
+                ui.trigger('action-3');
+            });
+            
+            $('#close').click(function () {
+                ui.close();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- NOTE 1: An User Interface must have the 'sp-modal-ui' class -->
+    <!-- NOTE 2: the 'sp-modal-draggable' class lets the user to drag the interface -->
+    <div class="sp-modal-ui user-interface">
+        <div class="title sp-modal-draggable"></div>
+        <div class="message"></div>
+        <div class="footer">
+            <input id="action-1" type="button" value="Perform Action 1" />
+            <input id="action-2" type="button" value="Perform Action 2" />
+            <input id="action-3" type="button" value="Perform Action 3" />
+            <input id="close" type="button" value="Close Interface" />
+        </div>
+    </div>
+</body>
+</html>
+

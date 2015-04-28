@@ -1,0 +1,9 @@
+div.sp-modal-ui {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.sp-modal-draggable {
+    cursor: default;
+}

@@ -1,0 +1,27 @@
+div.user-interface {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    background: #E8E8E8;
+    border-radius: 7pt;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 3pt 10pt 0px;
+}
+div.user-interface div.title {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    line-height: 22pt;
+    height: 22pt;
+    color: #ffffff;
+    padding: 0px 10pt;
+    background-color: #790000;
+    border-top-left-radius: 7pt;
+    border-top-right-radius: 7pt;
+}
+div.user-interface div.message {
+    padding: 26pt 0;
+    text-align: center;
+}
+div.user-interface div.footer {
+    padding: 7pt;
+    text-align: center;
+}

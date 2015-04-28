@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Modal Window Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../src/jquery.sp-modal-ui.css" />
+    <link rel="stylesheet" href="../../src/jquery.sp-modal-loading.css" />
+    <link rel="stylesheet" href="../../src/jquery.sp-modal-window.css" />
+    <script src="../../external/jquery-2.1.3.min.js"></script>
+    <script src="../../src/jquery.sp-modal-ui.js"></script>
+    <script src="../../src/jquery.sp-modal-dialog.js"></script>
+    <script src="../../src/jquery.sp-modal-loading.js"></script>
+    <script src="../../src/jquery.sp-modal-window.js"></script>
+    <script>
+        $(function () {
+            var mw = new $.spModalWindow(
+                'user-interface.html',
+                {
+                    title: 'User Interface Example',
+                    message: 'This is an example of custom User Interface.<br />' +
+                        'Please close the interface or press any button below.'
+                }
+            );
+            
+            mw.on('action-1', function () {
+                mw.close();
+            });
+            
+            mw.on('action-2', function () {
+                mw.close();
+            });
+            
+            mw.on('action-3', function () {
+                mw.close();
+            });
+        });
+    </script>
+</head>
+
+<body>
+</body>
+</html>
+
