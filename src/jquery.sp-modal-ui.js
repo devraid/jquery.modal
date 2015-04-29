@@ -3,6 +3,24 @@
     /**
      * User Interface class.
      * 
+     * See the example included in /demos/modal-window for more info.
+     * 
+     * Example:
+     * ```JavaScript
+     * var target = $('#my-user-interface');
+     * var ui = new $.spModalUi(target);
+     * 
+     * // populates data
+     * $('#title').text(ui.getParam('title'));
+     * $('#message').text(ui.getParam('message'));
+     * 
+     * $('#button1').on('click', function () {
+     *      // tells the parent window to perform the action-1
+     *      // the event will be captured by the parent window
+     *      ui.trigger('action-1');
+     * });
+     * ```
+     * 
      * @param {jQuery.<HTMLElement>} target      User Interface
      * @param {jQuery.<HTMLElement>} modalWindow Modal window container (not required)
      */

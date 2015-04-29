@@ -3,6 +3,17 @@
     /**
      * Modal loading dialog.
      * 
+     * See the example included in /demos/modal-loading for more info.
+     * 
+     * Example:
+     * ```JavaScript
+     * var loading = new $.spModalLoading('This process may take several minutes...');
+     * loading.addButton('Cancel', function () {
+     *      // canceling process...
+     *      loading.close();
+     * });
+     * ```
+     * 
      * @param {String} message Message (not required)
      * 
      * @extends {$.spModalDialog}

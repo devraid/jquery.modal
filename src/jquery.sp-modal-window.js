@@ -1,9 +1,19 @@
 (function ($) {
     
     /**
-     * Opens a modal window.
+     * Creates a modal window.
      * 
-     * This function appends an iframe to the body.
+     * A modal window is an iFrame covering all the available window. See the example included in
+     * /demos/modal-window for more info.
+     * 
+     * Example:
+     * ```JavaScript
+     * var mw = new $.spModalWindow('user-interface.html', {param1: 'one', param2: 'two'});
+     * mw.on('event', function () {
+     *      // Performs some actions and close the modal window
+     *      mw.close();
+     * });
+     * ```
      * 
      * @param {String} url    URL to the user interface
      * @param {Object} params Parameters (not required)

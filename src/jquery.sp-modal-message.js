@@ -3,6 +3,15 @@
     /**
      * Modal message dialog.
      * 
+     * See the example included in /demos/modal-message for more info.
+     * 
+     * Example:
+     * ```JavaScript
+     * var msg = new $.spModalMessage('My Title', 'This is a message...');
+     * msg.setX(100);
+     * msg.setY(50);
+     * ```
+     * 
      * @param {String} title   Title
      * @param {String} message Message (not required)
      * 
