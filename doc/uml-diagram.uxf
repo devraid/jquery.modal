@@ -4,7 +4,7 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>350</x>
-      <y>20</y>
+      <y>10</y>
       <w>360</w>
       <h>120</h>
     </coordinates>
@@ -21,8 +21,8 @@ can throw or capture events.</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>350</x>
-      <y>200</y>
+      <x>170</x>
+      <y>190</y>
       <w>360</w>
       <h>200</h>
     </coordinates>
@@ -44,19 +44,19 @@ User Interface.</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>500</x>
-      <y>110</y>
-      <w>50</w>
+      <x>320</x>
+      <y>100</y>
+      <w>230</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;90</additional_attributes>
+    <additional_attributes>210;30;30;90</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>40</x>
-      <y>640</y>
+      <y>630</y>
       <w>260</w>
       <h>70</h>
     </coordinates>
@@ -70,7 +70,7 @@ a modal loading dialog.</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>380</x>
-      <y>640</y>
+      <y>630</y>
       <w>380</w>
       <h>190</h>
     </coordinates>
@@ -91,7 +91,7 @@ a modal message dialog.</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>70</x>
-      <y>480</y>
+      <y>470</y>
       <w>540</w>
       <h>70</h>
     </coordinates>
@@ -106,18 +106,18 @@ This class represents a modal window dialog.</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>310</x>
-      <y>370</y>
-      <w>230</w>
+      <y>360</y>
+      <w>50</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>210;30;30;110</additional_attributes>
+    <additional_attributes>30;30;30;110</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>130</x>
-      <y>520</y>
+      <y>510</y>
       <w>230</w>
       <h>140</h>
     </coordinates>
@@ -128,7 +128,7 @@ This class represents a modal window dialog.</panel_attributes>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>310</x>
-      <y>520</y>
+      <y>510</y>
       <w>220</w>
       <h>140</h>
     </coordinates>
@@ -138,8 +138,8 @@ This class represents a modal window dialog.</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>830</x>
-      <y>480</y>
+      <x>760</x>
+      <y>190</y>
       <w>280</w>
       <h>70</h>
     </coordinates>
@@ -151,12 +151,12 @@ This class represents a modal window.</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>490</x>
-      <y>370</y>
-      <w>510</w>
-      <h>130</h>
+      <x>500</x>
+      <y>100</y>
+      <w>430</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;30;490;110</additional_attributes>
+    <additional_attributes>30;30;410;90</additional_attributes>
   </element>
 </diagram>
