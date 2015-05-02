@@ -11,9 +11,10 @@
     <script src="../../src/jquery.sp-modal-ui.js"></script>
     <script src="../../src/jquery.sp-modal-dialog.js"></script>
     <script src="../../src/jquery.sp-modal-loading.js"></script>
+    <script src="../../src/jquery.sp-modal.js"></script>
     <script>
         $(function () {
-            var loading = new $.spModalLoading();
+            var loading = $.spModal('loading');
             loading.addButton('Cancel', function () {
                 loading.close();
             });

@@ -10,10 +10,11 @@
     <script src="../../src/jquery.sp-modal-eventable.js"></script>
     <script src="../../external/jquery-ui-1.11.4.min.js"></script>
     <script src="../../src/jquery.sp-modal-ui.js"></script>
+    <script src="../../src/jquery.sp-modal.js"></script>
     <script>
         $(function () {
             var target = $('.user-interface');
-            var ui = new $.spModalUi(target);
+            var ui = new $.spModal('ui', target);
             
             // populates data
             $('.title', target).text(ui.getParam('title'));

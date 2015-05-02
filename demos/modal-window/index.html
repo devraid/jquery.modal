@@ -12,9 +12,11 @@
     <script src="../../src/jquery.sp-modal-dialog.js"></script>
     <script src="../../src/jquery.sp-modal-loading.js"></script>
     <script src="../../src/jquery.sp-modal-window.js"></script>
+    <script src="../../src/jquery.sp-modal.js"></script>
     <script>
         $(function () {
-            var mw = new $.spModalWindow(
+            var mw = new $.spModal(
+                'window',
                 'user-interface.html',
                 {
                     title: 'User Interface Example',

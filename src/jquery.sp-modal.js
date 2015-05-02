@@ -1,9 +1,21 @@
 (function ($) {
     var methods = {
         /**
-         * Opens a modal window.
+         * Creates a modal window.
          * 
-         * @param {String} url    URL to the User Interface.
+         * A modal window is an iFrame covering all the available window. See the example included in
+         * /demos/modal-window for more info.
+         * 
+         * Example:
+         * ```JavaScript
+         * var mw = $.spModal('window', 'user-interface.html', {param1: 'one', param2: 'two'});
+         * mw.on('event', function () {
+         *      // Performs some actions and close the modal window
+         *      mw.close();
+         * });
+         * ```
+         * 
+         * @param {String} url    URL to the user interface
          * @param {Object} params Parameters (not required)
          * 
          * @return {$.spModalWindow}
@@ -13,10 +25,28 @@
         },
         
         /**
-         * User Interface.
+         * User Interface class.
+         * 
+         * See the example included in /demos/modal-window for more info.
+         * 
+         * Example:
+         * ```JavaScript
+         * var target = $('#my-user-interface');
+         * var ui = $.spModal('ui', target);
+         * 
+         * // populates data
+         * $('#title').text(ui.getParam('title'));
+         * $('#message').text(ui.getParam('message'));
+         * 
+         * $('#button1').on('click', function () {
+         *      // tells the parent window to perform the action-1
+         *      // the event will be captured by the parent window
+         *      ui.trigger('action-1');
+         * });
+         * ```
          * 
          * @param {jQuery.<HTMLElement>} target      User Interface
-         * @param {jQuery.<HTMLElement>} modalWindow Modal Window (not required)
+         * @param {jQuery.<HTMLElement>} modalWindow Modal window container (not required)
          * 
          * @return {$.spModalUi}
          */
@@ -27,7 +57,16 @@
         /**
          * Modal message dialog.
          * 
-         * @param {String} title   title
+         * See the example included in /demos/modal-message for more info.
+         * 
+         * Example:
+         * ```JavaScript
+         * var msg = $.spModal('message', 'My Title', 'This is a message...');
+         * msg.setX(100);
+         * msg.setY(50);
+         * ```
+         * 
+         * @param {String} title   Title
          * @param {String} message Message (not required)
          * 
          * @return {$.spModalMessage}
@@ -39,12 +78,23 @@
         /**
          * Modal loading dialog.
          * 
+         * See the example included in /demos/modal-loading for more info.
+         * 
+         * Example:
+         * ```JavaScript
+         * var loading = $.spModal('loading', 'This process may take several minutes...');
+         * loading.addButton('Cancel', function () {
+         *      // canceling process...
+         *      loading.close();
+         * });
+         * ```
+         * 
          * @param {String} message Message (not required)
          * 
-         * @return {$.spModalDialog}
+         * @return {$.spModalLoading}
          */
         'loading': function (message) {
-            return new $.spModalDialog(message);
+            return new $.spModalLoading(message);
         }
     };
     

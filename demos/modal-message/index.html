@@ -13,9 +13,10 @@
     <script src="../../src/jquery.sp-modal-ui.js"></script>
     <script src="../../src/jquery.sp-modal-dialog.js"></script>
     <script src="../../src/jquery.sp-modal-message.js"></script>
+    <script src="../../src/jquery.sp-modal.js"></script>
     <script>
         $(function () {
-            var msg = new $.spModalMessage('This is a test', 'And this is a message...');
+            var msg = new $.spModal('message', 'This is a test', 'And this is a message...');
             
             // adds 'Accept' button
             var acceptBtn = msg.addButton('Accept');
