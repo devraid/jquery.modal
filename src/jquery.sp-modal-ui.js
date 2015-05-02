@@ -23,6 +23,8 @@
      * 
      * @param {jQuery.<HTMLElement>} target      User Interface
      * @param {jQuery.<HTMLElement>} modalWindow Modal window container (not required)
+     * 
+     * @extends {$.spModalEventable}
      */
     $.spModalUi = function (target, modalWindow) {
         this._target = target;
@@ -34,7 +36,11 @@
         }
         
         this._update();
+        
+        // calls the parent constructor
+        $.spModalEventable.call(this, this._target);
     };
+    $.spModalUi.prototype = Object.create($.spModalEventable.prototype);
     
     /**
      * Modal window Container.
@@ -134,22 +140,10 @@
     };
     
     /**
-     * Attaches an event handler.
-     * 
-     * More info: https://api.jquery.com/on/
-     * 
-     * @return {jQuery}
-     */
-    $.spModalUi.prototype.on = function () {
-        var args = Array.prototype.slice.call(arguments);
-        
-        return this._target.on.apply(this._target, args);
-    };
-    
-    /**
      * Removes an event handler.
      * 
      * More info: https://api.jquery.com/off/
+     * This function overrides $.spModalEventable::off()
      * 
      * @return {jQuery}
      */
@@ -168,6 +162,7 @@
      * Triggers an event.
      * 
      * More info: https://api.jquery.com/trigger/
+     * This function overrides $.spModalEventable::trigger()
      * 
      * @return {jQuery}
      */

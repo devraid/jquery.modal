@@ -44,61 +44,11 @@
                 loading.close();
             })
             .appendTo('body');
-    };
-    
-    /**
-     * Iframe modal window.
-     * @var {jQuery.<HTMLIFrameElement>}
-     */
-    $.spModalWindow.prototype._target = null;
-    
-    /**
-     * Gets the iframe modal window.
-     * 
-     * @return {jQuery.<HTMLIFrameElement>}
-     */
-    $.spModalWindow.prototype.getTarget = function () {
-        return this._target;
-    };
-    
-    /**
-     * Attaches an event handler.
-     * 
-     * More info: https://api.jquery.com/on/
-     * 
-     * @return {jQuery}
-     */
-    $.spModalWindow.prototype.on = function () {
-        var args = Array.prototype.slice.call(arguments);
         
-        return this._target.on.apply(this._target, args);
+        // calls the parent constructor
+        $.spModalEventable.call(this, this._target);
     };
-    
-    /**
-     * Removes an event handler.
-     * 
-     * More info: https://api.jquery.com/off/
-     * 
-     * @return {jQuery}
-     */
-    $.spModalWindow.prototype.off = function () {
-        var args = Array.prototype.slice.call(arguments);
-        
-        return this._target.off.apply(this._target, args);
-    }
-    
-    /**
-     * Triggers an event.
-     * 
-     * More info: https://api.jquery.com/trigger/
-     * 
-     * @return {jQuery}
-     */
-    $.spModalWindow.prototype.trigger = function (eventType) {
-        var args = Array.prototype.slice.call(arguments);
-        
-        this._target.trigger.apply(this._target, args);
-    };
+    $.spModalWindow.prototype = Object.create($.spModalEventable.prototype);
     
     /**
      * Closes the modal window.
