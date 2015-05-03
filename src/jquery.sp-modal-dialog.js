@@ -1,3 +1,14 @@
+/**
+ * jQuery.spModalDialog - A modal dialog interface.
+ *
+ * This plugin requires jQuery >= 1.7
+ *
+ * @namespace
+ * @name      spModalDialog
+ * @author    Gonzalo Chumillas <gchumillas@email.com>
+ * @license   https://github.com/soloproyectos/jquery.modal/blob/master/LICENSE MIT License
+ * @link      https://github.com/soloproyectos/jquery.modal
+ */
 (function ($) {
     
     /**
@@ -7,6 +18,8 @@
      * @param {jQuery.<HTMLElement>} modalWindow Modal window container (not required)
      * 
      * @abstract
+     * @name spModalDialog#__constructor__
+     * @function
      */
     $.spModalDialog = function (target, modalWindow) {
         // calls the parent constructor
@@ -23,6 +36,8 @@
      * @param {Function} onClick Callback function (not required)
      * 
      * @return {jQuery}
+     * @name spModalDialog#addButton
+     * @function
      */
     $.spModalDialog.prototype.addButton = function (title, onClick) {
         var target = this.getTarget();
