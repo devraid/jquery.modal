@@ -1,3 +1,14 @@
+/**
+ * jQuery.spModalLoading - A modal loading dialog.
+ * 
+ * This plugin requires jQuery >= 1.7
+ *
+ * @namespace
+ * @name      spModalLoading
+ * @author    Gonzalo Chumillas <gchumillas@email.com>
+ * @license   https://github.com/soloproyectos/jquery.modal/blob/master/LICENSE MIT License
+ * @link      https://github.com/soloproyectos/jquery.modal
+ */
 (function ($) {
     
     /**
@@ -17,6 +28,8 @@
      * @param {String} message Message (not required)
      * 
      * @extends {$.spModalDialog}
+     * @name spModalLoading#__constructor__
+     * @function
      */
     $.spModalLoading = function (message) {
         if (message === undefined) {

@@ -1,0 +1,26 @@
+{
+    "source": {
+        "include": [ "src", "README.md" ],
+        "includePattern": "([^/]+/)*jquery\\.sp.*\\.js"
+    },
+    "opts": {
+        "template": "/home/gonzalo/.jsdoc/templates/ink-docstrap/template",
+        "destination": "docs",
+        "verbose": true
+    },
+    "templates": {
+        "systemName"      : "API Docs",
+        "footer"          : "API Documentation",
+        "copyright"       : "Copyright (c) 2015 Gonzalo Chumillas.",
+        "navType"         : "vertical",
+        "theme"           : "cerulean",
+        "linenums"        : false,
+        "collapseSymbols" : false,
+        "inverseNav"      : false
+    },
+    "plugins": [ "plugins/markdown" ],
+    "markdown": {
+        "parser": "gfm",
+        "hardwrap": true
+    }
+}
