@@ -33,5 +33,5 @@ cancelBtn.on('click', function () {
 
 [dist]:/soloproyectos/jquery.modal/tree/master/dist
 [demos]:/soloproyectos/jquery.modal/tree/master/demos
-[demos/modal-loading]/soloproyectos/jquery.modal/tree/master/demos/modal-loading
-[demos/modal-message]/soloproyectos/jquery.modal/tree/master/demos/modal-message
+[demos/modal-loading]:/soloproyectos/jquery.modal/tree/master/demos/modal-loading
+[demos/modal-message]:/soloproyectos/jquery.modal/tree/master/demos/modal-message
