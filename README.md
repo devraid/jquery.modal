@@ -17,7 +17,7 @@ loading.addButton('Cancel', function () {
 
 Creates a modal message dialog (see [demos/modal-message](demos/modal-message) for a complete example):
 ```JavaScript
-var msg = new $.spModal('message', 'This is a test', 'And this is a message...');
+var msg = $.spModal('message', 'This is a test', 'And this is a message...');
 
 // adds 'Accept' button
 var acceptBtn = msg.addButton('Accept');
@@ -34,7 +34,7 @@ cancelBtn.on('click', function () {
 
 Creates a modal window (see [demos/modal-window](demos/modal-window) for a complete example):
 ```JavaScript
-var mw = new $.spModal(
+var mw = $.spModal(
     'window',
     'user-interface.html',
     {
