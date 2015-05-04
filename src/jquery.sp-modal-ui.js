@@ -47,7 +47,7 @@
         }
         this._target.draggable({handle: '.sp-modal-draggable'});
         
-        this._update();
+        this.update();
         
         // calls the parent constructor
         $.spModalEventable.call(this, this._target);
@@ -125,7 +125,7 @@
      */
     $.spModalUi.prototype.setX = function (value) {
         this._x = value;
-        this._update();
+        this.update();
     };
     
     /**
@@ -148,7 +148,7 @@
      */
     $.spModalUi.prototype.setY = function (value) {
         this._y = value;
-        this._update();
+        this.update();
     };
     
     /**
@@ -228,7 +228,7 @@
      * 
      * @return {Void}
      */
-    $.spModalUi.prototype._update = function () {
+    $.spModalUi.prototype.update = function () {
         // sets UI position
         var x = this.getX() === null
             ? Math.max(0, $(window).width() / 2 - this._target.width() / 2)

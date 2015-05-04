@@ -144,22 +144,22 @@
         }
         
         this._textAlign = value;
-        this._update();
+        this.update();
     };
     
     /**
      * Updates the user interface.
      * 
-     * This function overrides $.spModalUi::_update.
+     * This function overrides $.spModalUi::update().
      * 
      * @return {Void}
      */
-    $.spModalMessage.prototype._update = function () {
+    $.spModalMessage.prototype.update = function () {
         var target = this.getTarget();
         
         $('.sp-modal-text', target).css('text-align', this._textAlign);
         
-        // calls the parent _update
-        $.spModalDialog.prototype._update.call(this);
+        // calls the parent update
+        $.spModalDialog.prototype.update.call(this);
     };
 })(jQuery);
