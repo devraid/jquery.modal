@@ -201,6 +201,21 @@
         this._modalWindow.remove();
     };
     
+    /**
+     * Updates the current interface.
+     * 
+     * @return {Void}
+     */
+    $.spModalUi.prototype.update = function () {
+        // sets UI position
+        var x = this.getX() === null
+            ? Math.max(0, $(window).width() / 2 - this._target.width() / 2)
+            : this.getX();
+        var y = this.getY() === null
+            ? Math.max(0, $(window).height() / 5 - this._target.height() / 2)
+            : this.getY();
+        this._target.css({left: x, top: y});
+    };
     
     /**
      * Searches the modal window container.
@@ -221,21 +236,5 @@
         });
         
         return ret;
-    };
-    
-    /**
-     * Updates the current interface.
-     * 
-     * @return {Void}
-     */
-    $.spModalUi.prototype.update = function () {
-        // sets UI position
-        var x = this.getX() === null
-            ? Math.max(0, $(window).width() / 2 - this._target.width() / 2)
-            : this.getX();
-        var y = this.getY() === null
-            ? Math.max(0, $(window).height() / 5 - this._target.height() / 2)
-            : this.getY();
-        this._target.css({left: x, top: y});
     };
 })(jQuery);
