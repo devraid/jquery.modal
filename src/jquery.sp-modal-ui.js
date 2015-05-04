@@ -44,9 +44,10 @@
         this._modalWindow = modalWindow === undefined? this._searchModalWindow(): modalWindow;
         
         // makes the UI draggable
-        if ($.ui !== undefined) {
-            this._target.draggable({handle: '.sp-modal-draggable'});
+        if ($.ui === undefined) {
+            $.error('jQuery.ui >= 1.11.4 is required');
         }
+        this._target.draggable({handle: '.sp-modal-draggable'});
         
         this._update();
         
