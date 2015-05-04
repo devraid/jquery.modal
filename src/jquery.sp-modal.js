@@ -1,7 +1,9 @@
 /**
- * jQuery.spModal - A modal window.
+ * jQuery.spModal - A Modal Window System.
  *
- * This plugin requires jQuery >= 1.7
+ * This plugin requires: 
+ *      1. jQuery >= 2.1.3
+ *      2. jQuery.ui >= 1.11.4
  *
  * @namespace
  * @name      spModal

@@ -1,5 +1,5 @@
 #!/bin/bash
-# this script creates the distribution
+# this script creates the distribution files
 
 # compresses JavaScript files
 cat \
@@ -10,7 +10,7 @@ cat \
     src/jquery.sp-modal-loading.js \
     src/jquery.sp-modal-message.js \
     src/jquery.sp-modal.js \
-| uglifyjs -o dist/jquery.sp-modal.min.js
+| uglifyjs --compress --mangle -o dist/jquery.sp-modal.min.js
 
 # compresses CSS files
 cat \
@@ -20,4 +20,6 @@ cat \
     src/jquery.sp-modal-message.css \
 | uglifycss > dist/jquery.sp-modal.min.css
 
+# copies images from src to dist
+rm -rf dist/images
 cp -rp src/images dist/images
