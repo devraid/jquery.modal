@@ -57,6 +57,33 @@ mw.on('action-3', function () {
 });
 ```
 
+Creates a Custom User Interface (see [demos/modal-window](demos/modal-window) for a complete example):
+```JavaScript
+var target = $('.user-interface');
+var ui = new $.spModal('ui', target);
+
+// populates data
+$('.title', target).text(ui.getParam('title'));
+$('.message', target).html(ui.getParam('message'));
+
+// actions
+$('#action-1').click(function () {
+    ui.trigger('action-1');
+});
+
+$('#action-2').click(function () {
+    ui.trigger('action-2');
+});
+
+$('#action-3').click(function () {
+    ui.trigger('action-3');
+});
+
+$('#close').click(function () {
+    ui.close();
+});
+```
+
 [dist]:/soloproyectos/jquery.modal/tree/master/dist
 [demos]:/soloproyectos/jquery.modal/tree/master/demos
 [demos/modal-loading]:/soloproyectos/jquery.modal/tree/master/demos/modal-loading
