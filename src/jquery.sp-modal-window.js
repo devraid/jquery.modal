@@ -28,8 +28,6 @@
      * 
      * @param {String} url    URL to the user interface
      * @param {Object} params Parameters (not required)
-     * @name spModalWindow#__constructor__
-     * @function
      */
     $.spModalWindow = function (url, params) {
         var self = this;
@@ -67,8 +65,6 @@
      * Closes the modal window.
      * 
      * @return {Void}
-     * @name spModalWindow#close
-     * @function
      */
     $.spModalWindow.prototype.close = function () {
         this._target.remove();

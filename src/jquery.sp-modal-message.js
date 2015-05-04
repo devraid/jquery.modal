@@ -27,8 +27,6 @@
      * @param {String} message Message (not required)
      * 
      * @extends {$.spModalDialog}
-     * @name $.spModalMessage#__constructor__
-     * @function
      */
     $.spModalMessage = function (title, message) {
         // makes the message dialog
@@ -76,8 +74,6 @@
      * Gets the text.
      * 
      * @return {String}
-     * @name spModalMessage#getText
-     * @function
      */
     $.spModalMessage.prototype.getText = function () {
         var target = this.getTarget();
@@ -91,8 +87,6 @@
      * @param {String} value A text
      * 
      * @return {Void}
-     * @name spModalMessage#setText
-     * @function
      */
     $.spModalMessage.prototype.setText = function (value) {
         var target = this.getTarget();
@@ -104,8 +98,6 @@
      * Gets the HTML text.
      * 
      * @return {String}
-     * @name $.spModalMessage#getHtmlText
-     * @function
      */
     $.spModalMessage.prototype.getHtmlText = function () {
         var target = this.getTarget();
@@ -119,8 +111,6 @@
      * @param {String|jQuery} value An HTML or a jQuery fragment
      * 
      * @return {Void}
-     * @name spModalMessage#setHtmlText
-     * @function
      */
     $.spModalMessage.prototype.setHtmlText = function (value) {
         var target = this.getTarget();
@@ -134,8 +124,6 @@
      * See: http://www.w3schools.com/cssref/pr_text_text-align.asp
      * 
      * @return {String}
-     * @name spModalMessage#getTextAlign
-     * @function
      */
     $.spModalMessage.prototype.getTextAlign = function () {
         return this._textAlign;
@@ -149,8 +137,6 @@
      * @param {String} value Alignment
      * 
      * @return {Void}
-     * @name spModalMessage#setTextAlign
-     * @function
      */
     $.spModalMessage.prototype.setTextAlign = function (value) {
         if ($.inArray(value, this._availTextAlign) < 0) {
@@ -167,8 +153,6 @@
      * This function overrides $.spModalUi::_update.
      * 
      * @return {Void}
-     * @name spModalMessage#_update
-     * @function
      */
     $.spModalMessage.prototype._update = function () {
         var target = this.getTarget();

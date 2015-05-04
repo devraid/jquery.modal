@@ -36,8 +36,6 @@
      * @param {jQuery.<HTMLElement>} modalWindow Modal window container (not required)
      * 
      * @extends {$.spModalEventable}
-     * @name spModalUi#__constructor__
-     * @function
      */
     $.spModalUi = function (target, modalWindow) {
         this._target = target;
@@ -84,8 +82,6 @@
      * Gets the modal window container.
      * 
      * @return {jQuery.<HTMLElement>}
-     * @name spModalUi#getModalWindow
-     * @function
      */
     $.spModalUi.prototype.getModalWindow = function () {
         return this._modalWindow;
@@ -95,8 +91,6 @@
      * Gets the User Interface.
      * 
      * @return {jQuery.<HTMLElement>}
-     * @name spModalUi#getTarget
-     * @function
      */
     $.spModalUi.prototype.getTarget = function () {
         return this._target;
@@ -106,8 +100,6 @@
      * Gets a parameter from the modal window container.
      * 
      * @return {Mixed}
-     * @name spModalUi#getParam
-     * @function
      */
     $.spModalUi.prototype.getParam = function (name) {
         return this._modalWindow.data(name);
@@ -117,8 +109,6 @@
      * Gets the X coordinate.
      * 
      * @return {Number|null}
-     * @name spModalUi#getX
-     * @function
      */
     $.spModalUi.prototype.getX = function () {
         return this._x;
@@ -132,8 +122,6 @@
      * @param {Number|null} value X coordinate
      * 
      * @return {Void}
-     * @name spModalUi#setX
-     * @function
      */
     $.spModalUi.prototype.setX = function (value) {
         this._x = value;
@@ -144,8 +132,6 @@
      * Gets the Y coordinate.
      * 
      * @return {Number|null}
-     * @name spModalUi#getY
-     * @function
      */
     $.spModalUi.prototype.getY = function () {
         return this._y;
@@ -159,8 +145,6 @@
      * @param {Number|null} value Y coordinate
      * 
      * @return {Void}
-     * @name spModalUi#setY
-     * @function
      */
     $.spModalUi.prototype.setY = function (value) {
         this._y = value;
@@ -174,8 +158,6 @@
      * This function overrides $.spModalEventable::off()
      * 
      * @return {jQuery}
-     * @name spModalUi#off
-     * @function
      */
     $.spModalUi.prototype.off = function () {
         var args = Array.prototype.slice.call(arguments);
@@ -195,8 +177,6 @@
      * This function overrides $.spModalEventable::trigger()
      * 
      * @return {jQuery}
-     * @name spModalUi#trigger
-     * @function
      */
     $.spModalUi.prototype.trigger = function (eventType) {
         var self = this;
@@ -216,8 +196,6 @@
      * Closes the modal window container.
      * 
      * @return {Void}
-     * @name spModalUi#close
-     * @function
      */
     $.spModalUi.prototype.close = function () {
         this._modalWindow.remove();
@@ -249,8 +227,6 @@
      * Updates the current interface.
      * 
      * @return {Void}
-     * @name spModalUi#_update
-     * @function
      */
     $.spModalUi.prototype._update = function () {
         // sets UI position

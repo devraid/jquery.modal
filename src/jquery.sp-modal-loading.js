@@ -28,8 +28,6 @@
      * @param {String} message Message (not required)
      * 
      * @extends {$.spModalDialog}
-     * @name spModalLoading#__constructor__
-     * @function
      */
     $.spModalLoading = function (message) {
         if (message === undefined) {

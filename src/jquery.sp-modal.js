@@ -5,8 +5,6 @@
  *      1. jQuery >= 2.1.3
  *      2. jQuery.ui >= 1.11.4
  *
- * @namespace
- * @name      spModal
  * @author    Gonzalo Chumillas <gchumillas@email.com>
  * @license   https://github.com/soloproyectos/jquery.modal/blob/master/LICENSE MIT License
  * @link      https://github.com/soloproyectos/jquery.modal
@@ -32,8 +30,6 @@
          * @param {Object} params Parameters (not required)
          * 
          * @return {$.spModalWindow}
-         * @name spModal#window
-         * @function
          */
         'window': function (url, params) {
             return new $.spModalWindow(url, params);
@@ -64,8 +60,6 @@
          * @param {jQuery.<HTMLElement>} modalWindow Modal window container (not required)
          * 
          * @return {$.spModalUi}
-         * @name spModal#ui
-         * @function
          */
         'ui': function (target, modalWindow) {
             return new $.spModalUi(target, modalWindow);
@@ -87,8 +81,6 @@
          * @param {String} message Message (not required)
          * 
          * @return {$.spModalMessage}
-         * @name spModal#message
-         * @function
          */
         'message': function (title, message) {
             return new $.spModalMessage(title, message);
@@ -111,8 +103,6 @@
          * @param {String} message Message (not required)
          * 
          * @return {$.spModalLoading}
-         * @name spModal#loading
-         * @function
          */
         'loading': function (message) {
             return new $.spModalLoading(message);
