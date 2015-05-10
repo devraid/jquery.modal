@@ -67,11 +67,11 @@
                 : 'The request has failed';
             var title = $.type(xhr.statusText) == 'string' && xhr.statusText.length > 0
                 ? xhr.statusText
-                : 'The document is not well formed';
+                : 'HTTP Request Error';
             
             // document type not expected or malformed
             if (status == 'parsererror') {
-                title = 'Parser Error';
+                title = 'The document is not well formed';
             }
 
             var msg = new $.spModalMessage(title, message);
