@@ -127,7 +127,7 @@
          * 
          * @param {Mixed} args Additional arguments
          * 
-         * @extends {$.spModalRequest}
+         * @return {jQuery.Promise}
          */
         'get': function (args) {
             // Based on a Matthew Crumley solution,
@@ -161,7 +161,7 @@
          * 
          * @param {Mixed} args Additional arguments
          * 
-         * @extends {$.spModalRequest}
+         * @return {jQuery.Promise}
          */
         'post': function (args) {
             // Based on a Matthew Crumley solution,
