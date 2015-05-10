@@ -179,6 +179,18 @@
         /**
          * Sends a POST request and uploads files.
          * 
+         * Example:
+         * ```JavaScript
+         * var inputFile = $('#file');
+         * inputFile.change(function () {
+         *     $.spModal('upload', inputFile, 'test.php', {one: 1, two: 2}).done(function (data) {
+         *         console.log(data);
+         *     }).fail(function () {
+         *         console.log('failed!');
+         *     });
+         * });
+         * ```
+         * 
          * @param {jQuery.<HTMLInputElement>|String} input Input file(s)
          * @param {String}                           url   URL
          * @param {Object}                           data  Parameters (not required)
