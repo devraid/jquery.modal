@@ -25,12 +25,12 @@
      * });
      * ```
      * 
-     * @param {jQuery.<HTMLInputElement>} input Input file(s)
-     * @param {String}                    url   URL
-     * @param {Object}                    data  Parameters (not required)
+     * @param {jQuery.<HTMLInputElement>|String} input Input file(s)
+     * @param {String}                           url   URL
+     * @param {Object}                           data  Parameters (not required)
      */
     $.spModalRequestUpload = function (input, url, data) {
-        this._input = input;
+        this._input = $.type(input) == 'string'? $(input): input;
         this._url = url;
         this._data = data;
     };

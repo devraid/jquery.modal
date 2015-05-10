@@ -179,9 +179,9 @@
         /**
          * Sends a POST request and uploads files.
          * 
-         * @param {jQuery.<HTMLInputElement>} input Input file(s)
-         * @param {String}                    url   URL
-         * @param {Object}                    data  Parameters (not required)
+         * @param {jQuery.<HTMLInputElement>|String} input Input file(s)
+         * @param {String}                           url   URL
+         * @param {Object}                           data  Parameters (not required)
          * 
          * @return {jQuery.Promise}
          */
