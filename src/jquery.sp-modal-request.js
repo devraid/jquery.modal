@@ -80,6 +80,7 @@
                 msg.close();
                 ret.reject(xhr, status);
             });
+            $.error(message);
         });
 
         return ret.promise();
