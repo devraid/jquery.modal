@@ -106,7 +106,75 @@
          */
         'loading': function (message) {
             return new $.spModalLoading(message);
-        }
+        },
+        
+        /**
+         * Sends a GET request.
+         * 
+         * This function uses internally the $.get function and accepts the same parameters. More info:
+         * https://api.jquery.com/jquery.get/
+         * 
+         * Example:
+         * ```JavaScript
+         * $.spModal('get', 'test.php', {one: 1, two: 2, three: 3}).always(function () {
+         *     console.log('This is always executed');
+         * }).done(function (data) {
+         *     console.log('This is executed on success requests');
+         * }).fail(function () {
+         *     console.log('This is executed on failed requests');
+         * });
+         * ```
+         * 
+         * @param {Mixed} args Additional arguments
+         * 
+         * @extends {$.spModalRequest}
+         */
+        'get': function (args) {
+            // Based on a Matthew Crumley solution,
+            // as we can't use the .apply() method in conjunction with the 'new' operator
+            // http://goo.gl/PRL0eZ (redirects to http://stackoverflow.com)
+            function F(args) {
+                return $.spModalRequestGet.apply(this, args);
+            }
+            F.prototype = $.spModalRequestGet.prototype;
+            
+            var req = new F(arguments);
+            return req.send();
+        },
+        
+        /**
+         * Sends a POST request.
+         * 
+         * This function uses internally the $.get function and accepts the same parameters. More info:
+         * https://api.jquery.com/jquery.post/
+         * 
+         * Example:
+         * ```JavaScript
+         * $.spModal('post', 'test.php', {one: 1, two: 2, three: 3}).always(function () {
+         *     console.log('This is always executed');
+         * }).done(function (data) {
+         *     console.log('This is executed on success requests');
+         * }).fail(function () {
+         *     console.log('This is executed on failed requests');
+         * });
+         * ```
+         * 
+         * @param {Mixed} args Additional arguments
+         * 
+         * @extends {$.spModalRequest}
+         */
+        'post': function (args) {
+            // Based on a Matthew Crumley solution,
+            // as we can't use the .apply() method in conjunction with the 'new' operator
+            // http://goo.gl/PRL0eZ (redirects to http://stackoverflow.com)
+            function F(args) {
+                return $.spModalRequestPost.apply(this, args);
+            }
+            F.prototype = $.spModalRequestPost.prototype;
+            
+            var req = new F(arguments);
+            return req.send();
+        },
     };
     
     /**

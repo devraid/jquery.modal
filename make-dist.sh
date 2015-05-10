@@ -13,6 +13,9 @@ cat \
     src/jquery.sp-modal-dialog.js \
     src/jquery.sp-modal-loading.js \
     src/jquery.sp-modal-message.js \
+    src/jquery.sp-modal-request.js \
+    src/jquery.sp-modal-request-get.js \
+    src/jquery.sp-modal-request-post.js \
     src/jquery.sp-modal.js \
 | uglifyjs \
     --compress \
