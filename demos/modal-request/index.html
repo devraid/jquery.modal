@@ -9,35 +9,66 @@
     <script src="../../external/jquery-ui-1.11.4.min.js"></script>
     <script src="../../dist/jquery.sp-modal-0.1.0.min.js"></script>
     <script>
+        function showMessage(message) {
+            var msg = $.spModal('message', 'Server Response', message);
+            msg.setTextAlign('left');
+            msg.addButton('Ok', function () {
+                msg.close();
+            });
+        }
+        
         $(function () {
             // sends a GET request and shows the contents
             $('#get').click(function () {
                 $.spModal('get', 'test.php', {one: 1, two: 2, three: 3}).done(function (data) {
-                    var msg = $.spModal('message', 'Server Response', data);
-                    msg.setTextAlign('left');
-                    msg.addButton('Ok', function () {
-                        msg.close();
-                    });
+                    showMessage(data);
                 });
             });
             
             // sends a POST request and shows the contents
             $('#post').click(function () {
                 $.spModal('post', 'test.php', {one: 1, two: 2, three: 3}).done(function (data) {
-                    var msg = $.spModal('message', 'Server Response', data);
-                    msg.setTextAlign('left');
-                    msg.addButton('Ok', function () {
-                        msg.close();
-                    });
+                    showMessage(data);
                 });
+            });
+            
+            // uploads a unique file
+            var inputFile = $('#file');
+            inputFile.change(function () {
+                $.spModal('upload', inputFile, 'test.php').done(function (data) {
+                    showMessage(data);
+                });
+            });
+            
+            // uploads multiple files
+            $('#upload').click(function () {
+                $.spModal('upload', $('#file1, #file2'), 'test.php', {one: 1, two: 2, three: 3})
+                    .done(function (data) {
+                        showMessage(data);
+                    });
             });
         });
     </script>
 </head>
 
 <body>
-    <input type="button" id="get" value="Sends a GET request" />
-    <input type="button" id="post" value="Sends a POST request" />
+    <h3>Example 1: Sends GET and POST requests</h3>
+    <div>
+        <input type="button" id="get" value="Sends a GET request" />
+        <input type="button" id="post" value="Sends a POST request" />
+    </div>
+    
+    <h3>Example 2: Uploads a file</h3>
+    <div>
+        <input type="file" id="file" name="file" />
+    </div>
+    
+    <h3>Example 3: Uploads multiple files</h3>
+    <div>
+        <input type="file" id="file1" name="file1" /><br />
+        <input type="file" id="file2" name="file2" /><br />
+        <input type="button" id="upload" value="Upload Files" />
+    </div>
 </body>
 </html>
 
