@@ -42,7 +42,8 @@
         // appends the button
         var button = $('<input type="button" />')
             .val(title)
-            .appendTo(footer);
+            .appendTo(footer)
+            .focus();
         
         // registers the 'click' event
         if (onClick !== undefined) {
