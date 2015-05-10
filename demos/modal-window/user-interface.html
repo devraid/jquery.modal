@@ -11,12 +11,11 @@
     <script src="../../dist/jquery.sp-modal-0.1.0.min.js"></script>
     <script>
         $(function () {
-            var target = $('.user-interface');
-            var ui = $.spModal('ui', target);
+            var ui = $.spModal('ui', '.user-interface');
             
             // populates data
-            $('.title', target).text(ui.getParam('title'));
-            $('.message', target).html(ui.getParam('message'));
+            $('.user-interface .title').text(ui.getParam('title'));
+            $('.user-interface .message').html(ui.getParam('message'));
             
             // actions
             $('#action-1').click(function () {

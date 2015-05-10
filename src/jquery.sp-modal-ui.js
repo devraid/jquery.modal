@@ -32,13 +32,13 @@
      * });
      * ```
      * 
-     * @param {jQuery.<HTMLElement>} target      User Interface
-     * @param {jQuery.<HTMLElement>} modalWindow Modal window container (not required)
+     * @param {jQuery.<HTMLElement>|String} target      User Interface
+     * @param {jQuery.<HTMLElement>}        modalWindow Modal window container (not required)
      * 
      * @extends {$.spModalEventable}
      */
     $.spModalUi = function (target, modalWindow) {
-        this._target = target;
+        this._target = $.type(target) == 'string'? $(target): target;
         this._modalWindow = modalWindow === undefined? this._searchModalWindow(): modalWindow;
         
         // makes the UI draggable
