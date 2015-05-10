@@ -175,6 +175,20 @@
             var req = new F(arguments);
             return req.send();
         },
+        
+        /**
+         * Sends a POST request and uploads files.
+         * 
+         * @param {jQuery.<HTMLInputElement>} input Input file(s)
+         * @param {String}                    url   URL
+         * @param {Object}                    data  Parameters (not required)
+         * 
+         * @return {jQuery.Promise}
+         */
+        'upload': function (input, url, data) {
+            var req = new $.spModalRequestUpload(input, url, data);
+            return req.send();
+        }
     };
     
     /**
