@@ -1,0 +1,30 @@
+div.sp-modal-progress div.sp-modal-text {
+    margin: 0 0 11pt;
+    text-align: center;
+}
+div.sp-modal-progress div.sp-modal-progress-bar {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 396px;
+    height: 17px;
+    background: #888888;
+}
+div.sp-modal-progress div.sp-modal-progress-bar div.sp-modal-percent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 396px;
+    height: 17px;
+    line-height: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+div.sp-modal-progress div.sp-modal-progress-bar div.sp-modal-indicator {
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 0;
+    height: 17px;
+    background: #004A76;
+}

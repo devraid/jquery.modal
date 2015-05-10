@@ -12,6 +12,7 @@ cat \
     src/jquery.sp-modal-ui.js \
     src/jquery.sp-modal-dialog.js \
     src/jquery.sp-modal-loading.js \
+    src/jquery.sp-modal-progress.js \
     src/jquery.sp-modal-message.js \
     src/jquery.sp-modal-request.js \
     src/jquery.sp-modal-request-get.js \
@@ -28,6 +29,7 @@ cat \
     src/jquery.sp-modal-window.css \
     src/jquery.sp-modal-ui.css \
     src/jquery.sp-modal-loading.css \
+    src/jquery.sp-modal-progress.css \
     src/jquery.sp-modal-message.css \
 | uglifycss > dist/jquery.sp-modal-0.1.0.min.css
 cp -rp src/images dist/images
