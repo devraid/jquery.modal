@@ -16,10 +16,21 @@
     <script src="../src/jquery.sp-modal-dialog.js"></script>
     <script src="../src/jquery.sp-modal-loading.js"></script>
     <script src="../src/jquery.sp-modal-message.js"></script>
+    <script src="../src/jquery.sp-modal-request.js"></script>
+    <script src="../src/jquery.sp-modal-request-get.js"></script>
+    <script src="../src/jquery.sp-modal-request-post.js"></script>
     <script src="../src/jquery.sp-modal.js"></script>
     <script>
         $(function () {
-            
+            var req = new $.spModalRequest('get', 'test1.php');
+            var obj = req.send();
+            obj.always(function () {
+                console.log('always');
+            }).done(function () {
+                console.log('done');
+            }).fail(function () {
+                console.log('fail');
+            });
         });
     </script>
 </head>
