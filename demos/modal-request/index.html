@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Modal Message Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../external/jquery-ui-1.11.4.min.css" />
+    <link rel="stylesheet" href="../../dist/jquery.sp-modal-0.1.0.min.css" />
+    <script src="../../external/jquery-2.1.3.min.js"></script>
+    <script src="../../external/jquery-ui-1.11.4.min.js"></script>
+    <script src="../../dist/jquery.sp-modal-0.1.0.min.js"></script>
+    <script>
+        $(function () {
+            // sends a GET request and shows the contents
+            $('#get').click(function () {
+                $.spModal('get', 'test.php', {one: 1, two: 2, three: 3}).done(function (data) {
+                    var msg = $.spModal('message', 'Server Response', data);
+                    msg.setTextAlign('left');
+                    msg.addButton('Ok', function () {
+                        msg.close();
+                    });
+                });
+            });
+            
+            // sends a POST request and shows the contents
+            $('#post').click(function () {
+                $.spModal('post', 'test.php', {one: 1, two: 2, three: 3}).done(function (data) {
+                    var msg = $.spModal('message', 'Server Response', data);
+                    msg.setTextAlign('left');
+                    msg.addButton('Ok', function () {
+                        msg.close();
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="button" id="get" value="Sends a GET request" />
+    <input type="button" id="post" value="Sends a POST request" />
+</body>
+</html>
+
