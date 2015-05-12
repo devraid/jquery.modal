@@ -107,8 +107,8 @@
          * @return {$.spModalMessage}
          */
         'alert': function (title, message) {
-            // if the second parameter is missing, the first parameter is taken as message
-            if (message === undefined) {
+            // title is missing
+            if (arguments.length < 2) {
                 message = title;
                 title = 'Alert';
             }
