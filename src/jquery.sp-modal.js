@@ -102,7 +102,7 @@
          * ```
          * 
          * @param {String} title   Title or message
-         * @param {Strimg} message Message (not required)
+         * @param {Strimg} message Message
          * 
          * @return {$.spModalMessage}
          */
@@ -117,6 +117,47 @@
             msg.addButton('Ok', function () {
                 msg.close();
             });
+            
+            return msg;
+        },
+        
+        /**
+         * Shows a modal confirm dialog.
+         * 
+         * A confirm dialog is a modal message dialog with two buttons: 'Ok' and 'Cancel'.
+         * This function can take 2 or 3 arguments. When taking 2 arguments, the function assumes that
+         * the title is missing and it uses a default title.
+         * 
+         * Example:
+         * ```JavaScript
+         * $.spModal('confirm', 'Are you sure?', function () {
+         *     console.log('Oh yes!');
+         * });
+         * ```
+         * 
+         * @param {String}   title    Title of message
+         * @param {String}   message  Message
+         * @param {Fucntion} onAccept 'On accept' function
+         * 
+         * @return {$.spModalMessage}
+         */
+        'confirm': function (title, message, onAccept) {
+            // title is missing
+            if (arguments.length < 3) {
+                onAccept = message;
+                message = title;
+                title = 'Confirm';
+            }
+            
+            var msg = new $.spModalMessage(title, message);
+            msg.addButton('Ok', function () {
+                msg.close();
+                $.proxy(onAccept, this)();
+            });
+            msg.addButton('Cancel', function () {
+                msg.close();
+            });
+            
             return msg;
         },
         
