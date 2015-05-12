@@ -13,9 +13,6 @@
     /**
      * Sends a GET request.
      * 
-     * This function uses internally the $.get function and accepts the same parameters. More info:
-     * https://api.jquery.com/jquery.get/
-     * 
      * Example:
      * ```JavaScript
      * var req = new $.spModalRequestGet('test.php');
@@ -28,17 +25,15 @@
      *     console.log('This function is executed on failed requests.');
      * });
      * ```
-     * 
-     * @param {Mixed} args Additional arguments
+     * @param {String} url    URL
+     * @param {Object} data   Parameters (not required)
+     * @param {String} type   Expected document type (not required)
      * 
      * @extends {$.spModalRequest}
      */
-    $.spModalRequestGet = function (args) {
-        var requestArgs = Array.prototype.slice.call(arguments);
-        requestArgs.unshift('get');
-        
+    $.spModalRequestGet = function (url, data, type) {
         // calls the parent constructor
-        $.spModalRequest.apply(this, requestArgs);
+        $.spModalRequest.call(this, 'get', url, data, type);
     };
     $.spModalRequestGet.prototype = Object.create($.spModalRequest.prototype);
 })(jQuery);

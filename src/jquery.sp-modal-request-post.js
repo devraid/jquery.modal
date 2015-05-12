@@ -29,16 +29,15 @@
      * });
      * ```
      * 
-     * @param {Mixed} args Additional arguments
+     * @param {String} url    URL
+     * @param {Object} data   Parameters (not required)
+     * @param {String} type   Expected document type (not required)
      * 
      * @extends {$.spModalRequest}
      */
-    $.spModalRequestPost = function (args) {
-        var requestArgs = Array.prototype.slice.call(arguments);
-        requestArgs.unshift('post');
-        
+    $.spModalRequestPost = function (url, data, type) {
         // calls the parent constructor
-        $.spModalRequest.apply(this, requestArgs);
+        $.spModalRequest.call(this, 'post', url, data, type);
     };
     $.spModalRequestPost.prototype = Object.create($.spModalRequest.prototype);
 })(jQuery);

@@ -14,15 +14,20 @@
      * Sends an HTTP request.
      * 
      * @param {String} method Request method. Can be either 'get' or 'post'
-     * @param {Mixed}  args   Additional arguments
+     * @param {String} url    URL
+     * @param {Object} data   Parameters (not required)
+     * @param {String} type   Expected document type (not required)
      */
-    $.spModalRequest = function (method, args) {
+    $.spModalRequest = function (method, url, data, type) {
         if ($.inArray(method, ['get', 'post']) < 0) {
             $.error('Method not allowed: ' + method);
         }
         
         this._method = method;
         this._args = Array.prototype.slice.call(arguments, 1);
+        this._url = url;
+        this._data = data;
+        this._type = type;
     };
     
     /**
@@ -33,10 +38,22 @@
     $.spModalRequest.prototype._method = null;
     
     /**
-     * Request arguments.
-     * @var {Array}
+     * URL.
+     * @var {String}
      */
-    $.spModalRequest.prototype._args = [];
+    $.spModalRequest.prototype._url = "";
+    
+    /**
+     * Parametes.
+     * @var {Object}
+     */
+    $.spModalRequest.prototype._data = {};
+    
+    /**
+     * Expected document type.
+     * @var {String}
+     */
+    $.spModalRequest.prototype._type = "";
     
     /**
      * Sends an HTTP request.
@@ -55,8 +72,8 @@
         });
 
         // sends a request
-        req = $[this._method].apply(
-            this, this._args
+        req = $[this._method].call(
+            this, this._url, this._data, function () {}, this._type
         ).always(function () {
             loading.close();
         }).done(function (data, status, xhr) {
