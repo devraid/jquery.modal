@@ -23,7 +23,7 @@ cat \
     --compress \
     --mangle \
     --preamble "/*! jQuery.spModal v0.1.0 | Copyright (c) 2015 Gonzalo Chumillas | https://github.com/soloproyectos/jquery.modal/blob/master/LICENSE */" \
-    -o dist/jquery.sp-modal-0.1.0.min.js
+    -o dist/jquery.sp-modal.min.js
 
 # compresses CSS files
 cat \
@@ -32,5 +32,5 @@ cat \
     src/jquery.sp-modal-loading.css \
     src/jquery.sp-modal-progress.css \
     src/jquery.sp-modal-message.css \
-| uglifycss > dist/jquery.sp-modal-0.1.0.min.css
+| uglifycss > dist/jquery.sp-modal.min.css
 cp -rp src/images dist/images
