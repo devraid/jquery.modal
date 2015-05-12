@@ -87,6 +87,40 @@
         },
         
         /**
+         * Shows a modal alert dialog.
+         * 
+         * An alert dialog is a modal message dialog with a button. If the 'message' parameter
+         * is missing, the 'title' is taken as message and a default title is used.
+         * 
+         * Examples:
+         * ```JavaScript:
+         * // shows an alert dialog with a title and a message
+         * $.spModal('alert', 'Alert', 'Hi there!');
+         * 
+         * // shows an alert dialog witha a default title and a message
+         * $.spModal('alert', 'Hi there!');
+         * ```
+         * 
+         * @param {String} title   Title or message
+         * @param {Strimg} message Message (not required)
+         * 
+         * @return {$.spModalMessage}
+         */
+        'alert': function (title, message) {
+            // if the second parameter is missing, the first parameter is taken as message
+            if (message === undefined) {
+                message = title;
+                title = 'Alert';
+            }
+            
+            var msg = new $.spModalMessage(title, message);
+            msg.addButton('Ok', function () {
+                msg.close();
+            });
+            return msg;
+        },
+        
+        /**
          * Modal loading dialog.
          * 
          * See the example included in /demos/modal-loading for more info.
