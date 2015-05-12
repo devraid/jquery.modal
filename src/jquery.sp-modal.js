@@ -162,6 +162,41 @@
         },
         
         /**
+         * Shows an modal error dialog and throws an error.
+         * 
+         * An error dialog is a modal message dialog with a button. If the 'message' parameter
+         * is missing, the 'title' is taken as message and a default title is used.
+         * 
+         * Example:
+         * ```JavaScript
+         * // shows and throws an error with a default title
+         * $.spModal('error', 'Oh my God!');
+         * 
+         * // shows and throws an error with a custom title
+         * $.spModal('error', 'Error!', 'Oh my God!');
+         * ```
+         * 
+         * @param {String}   title    Title of message
+         * @param {String}   message  Message
+         * 
+         * @return {Void}
+         */
+        'error': function (title, message) {
+            // title is missing
+            if (arguments.length < 2) {
+                message = title;
+                title = 'Alert';
+            }
+            
+            var msg = new $.spModalMessage(title, message);
+            msg.addButton('Ok', function () {
+                msg.close();
+            });
+            
+            $.error(message);
+        },
+        
+        /**
          * Modal loading dialog.
          * 
          * See the example included in /demos/modal-loading for more info.
