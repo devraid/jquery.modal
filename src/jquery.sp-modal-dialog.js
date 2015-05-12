@@ -26,6 +26,20 @@
     $.spModalDialog.prototype = Object.create($.spModalUi.prototype);
     
     /**
+     * Gets the buttons.
+     * 
+     * @return {Array.<{jQuery.<HTMLInputElement>}>}
+     */
+    $.spModalDialog.prototype.getButtons = function () {
+        var target = this.getTarget();
+        var buttons = $('.sp-modal-footer input[type=button]', target);
+        
+        return $.map(buttons, function (item) {
+            return $(item);
+        });
+    };
+    
+    /**
      * Adds a new button.
      * 
      * This function returns the added button.
