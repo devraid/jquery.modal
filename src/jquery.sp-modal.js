@@ -174,6 +174,12 @@
          * 
          * // shows and throws an error with a custom title
          * $.spModal('error', 'Error!', 'Oh my God!');
+         * 
+         * // initializes the error dialog, shows a message and throws an error
+         * $.spModal('error', 'This is an error', function () {
+         *     this.setTextAlign('left');
+         *     this.setHtml(true);
+         * });
          * ```
          * 
          * @param {String}   title   Title of message
