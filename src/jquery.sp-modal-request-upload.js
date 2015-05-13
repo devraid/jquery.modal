@@ -114,13 +114,7 @@
                     var title = $.type(req.statusText) == 'string' && req.statusText.length > 0
                         ? req.statusText
                         : 'HTTP Request Error';
-                    var msg = new $.spModalMessage(title, message);
-                    msg.setTextAlign('left');
-                    msg.addButton('Ok', function () {
-                        msg.close();
-                        ret.reject(req, status);
-                    });
-                    $.error(message);
+                    $.spModal('error', title, message);
                 }
                 
                 ret.resolve(req.responseText, 'sucess', req);

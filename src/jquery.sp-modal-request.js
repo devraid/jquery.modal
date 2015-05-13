@@ -91,13 +91,7 @@
                 title = 'The document is not well formed';
             }
 
-            var msg = new $.spModalMessage(title, message);
-            msg.setTextAlign('left');
-            msg.addButton('Ok', function () {
-                msg.close();
-                ret.reject(xhr, status);
-            });
-            $.error(message);
+            $.spModal('error', title, message);
         });
 
         return ret.promise();
