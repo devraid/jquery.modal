@@ -176,35 +176,30 @@
          * $.spModal('error', 'Error!', 'Oh my God!');
          * ```
          * 
-         * @param {String}  title         Title of message
-         * @param {String}  message       Message
-         * @param {String}  options.align Text align (left, center, right or justify)
-         * @param {Boolean} options.html  Whether message is html or not
+         * @param {String}   title   Title of message
+         * @param {String}   message Message
+         * @param {Function} onReady Called when the message dialog is ready
          * 
          * @return {Void}
          */
-        'error': function (title, message, options) {
+        'error': function (title, message, onReady) {
             // title is missing
             if ($.type(title) != 'string' || $.type(message) != 'string') {
-                options = message;
+                onReady = message;
                 message = title;
                 title = 'Error';
             }
             
-            // default parameters
-            if (options === undefined) {
-                options = {};
-            }
-            
+            // makes the modal dialog
             var msg = new $.spModalMessage(title, message);
-            msg[options.html? 'setHtmlText': 'setText'](message);
-            if (options.align !== undefined) {
-                msg.setTextAlign(options.align);
-            }
-            
             msg.addButton('Ok', function () {
                 msg.close();
             });
+            
+            // calls the initialization function
+            if (onReady !== undefined) {
+                $.proxy(onReady, msg)();
+            }
             
             $.error(message);
         },
