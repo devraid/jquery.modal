@@ -90,8 +90,15 @@
             if (status == 'parsererror') {
                 title = 'The document is not well formed';
             }
-
-            $.spModal('error', title, message);
+            
+            $.spModal('error', title, message, function () {
+                // aligns the text to the left if there are more than two lines
+                var count = (message.match(/\n/g) || []).length;
+                console.log(count);
+                if (count > 1) {
+                    this.setTextAlign('left');
+                }
+            });
         });
 
         return ret.promise();
