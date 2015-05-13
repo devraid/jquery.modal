@@ -176,19 +176,32 @@
          * $.spModal('error', 'Error!', 'Oh my God!');
          * ```
          * 
-         * @param {String}   title    Title of message
-         * @param {String}   message  Message
+         * @param {String}  title         Title of message
+         * @param {String}  message       Message
+         * @param {String}  options.align Text align (left, center, right or justify)
+         * @param {Boolean} options.html  Whether message is html or not
          * 
          * @return {Void}
          */
-        'error': function (title, message) {
+        'error': function (title, message, options) {
             // title is missing
-            if (arguments.length < 2) {
+            if ($.type(title) != 'string' || $.type(message) != 'string') {
+                options = message;
                 message = title;
-                title = 'Alert';
+                title = 'Error';
+            }
+            
+            // default parameters
+            if (options === undefined) {
+                options = {};
             }
             
             var msg = new $.spModalMessage(title, message);
+            msg[options.html? 'setHtmlText': 'setText'](message);
+            if (options.align !== undefined) {
+                msg.setTextAlign(options.align);
+            }
+            
             msg.addButton('Ok', function () {
                 msg.close();
             });
